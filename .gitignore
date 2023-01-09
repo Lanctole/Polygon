@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Polygon/BaseForm.cs
+/Polygon/Form1.cs
+/Polygon/Form1.Designer.cs
+/Polygon/Form1.resx
