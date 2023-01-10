@@ -66,7 +66,7 @@ namespace Polygon
                     {
                         this.Experience -= LevelUpThreshold;
                         this.Level++;
-                        CharacterLeveledUp?.Invoke(this, EventArgs.Empty);
+                        World.IncreaseLevel(1);
                     }
                     else
                     {
