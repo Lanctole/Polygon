@@ -1,13 +1,18 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
+using System.IO;
+using System.Media;
 using System.Resources;
+using System.Threading;
 using System.Windows.Forms;
+using WMPLib;
 
 namespace Polygon
 {
     public partial class MainForm :Form
     {
         private readonly ResourceManager resourceManager =
-            new ResourceManager("Polygon.Resources.Resources", typeof(MainForm).Assembly);
+            new ResourceManager("Polygon.Properties.Resources", typeof(MainForm).Assembly);
 
         public MainForm()
         {
@@ -18,9 +23,8 @@ namespace Polygon
             Size = new Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
             WindowState = FormWindowState.Maximized;
 
+            MenuMusicPlayer.Play();
             MainScreenControlsCreate();
         }
-
-       
     }
 }

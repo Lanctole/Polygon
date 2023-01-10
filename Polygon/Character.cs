@@ -26,6 +26,7 @@ namespace Polygon
         {
             get { return 100 * (int)Math.Pow(2, Level); }
         } 
+
         public int Gold { get; set; }
 
         public Weapon WeaponSlot { get; set; }
