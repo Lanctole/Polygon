@@ -16,6 +16,7 @@ namespace Polygon
 
             var playGame = new Button();
             playGame.Text = resourceManager.GetString("playGame");
+            this.Controls.Add(playGame);
 
             var glossary = new Button();
             glossary.Text = resourceManager.GetString("glossary");
@@ -24,12 +25,14 @@ namespace Polygon
                 this.Controls.Clear();
                 GlossaryControlsCreate();
             };
+            this.Controls.Add(glossary);
 
             var exit = new Button();
             exit.Text = resourceManager.GetString("exit");
             exit.Click +=(sender, args) => Application.Exit();
+            this.Controls.Add(exit);
 
-            Button[] buttons =  { playGame, glossary, exit };// TODO: вытаскивать кнопки через рефлексию
+            Button[] buttons =  this.Controls.OfType<Button>().ToArray();
 
             var buttonsPanel = new Panel();
             buttonsPanel.AutoSize = true;
