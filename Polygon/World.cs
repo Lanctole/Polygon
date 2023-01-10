@@ -6,19 +6,13 @@ using System.Threading.Tasks;
 
 namespace Polygon
 {
-    public class World
+    public static class World
     {
-        public int Level { get; set; }
+        public static int Level { get; set; }
 
-        public World(Character character)
+        public static void IncreaseLevel(int amount)
         {
-            this.Level = 1;
-            character.CharacterLeveledUp += OnCharacterLeveledUp;
-        }
-
-        private void OnCharacterLeveledUp(object sender, EventArgs e)
-        {
-            Level++;
+            World.Level += amount;
         }
     }
 }
