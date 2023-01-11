@@ -16,7 +16,7 @@ namespace Polygon
         public void MainScreenControlsCreate()
         {
             var menuButtonsSize = new Size(100, 50);
-
+            bool musicIsPlaying = false;
             var playGame = new Button();
             playGame.Text = resourceManager.GetString("playGame");
             this.Controls.Add(playGame);
@@ -35,6 +35,7 @@ namespace Polygon
             exit.Click +=(sender, args) => Application.Exit();
             this.Controls.Add(exit);
 
+            
             Button[] buttons =  this.Controls.OfType<Button>().ToArray();
 
             var buttonsPanel = new Panel();
@@ -57,6 +58,28 @@ namespace Polygon
             }
             Controls.Add(buttonsPanel);
  
+
+            var musicButton = new Button();
+            musicButton.Text = "Play Music";
+            musicButton.Size = new Size(50, 50);
+            musicButton.Location = new Point(0, this.Height - musicButton.Height);
+            musicButton.FlatAppearance.BorderSize = 0;
+            musicButton.FlatStyle = FlatStyle.Flat;
+            musicButton.Click += (sender, args) => {
+                if(musicIsPlaying) {
+                    MenuMusicPlayer.Stop();
+                    musicButton.Text = "Play Music";
+                    musicIsPlaying = false;
+                } else {
+                    MenuMusicPlayer.Play();
+                    musicButton.Text = "Stop Music";
+                    musicIsPlaying = true;
+                }
+            };
+            musicButton.BackColor = Color.Black;
+            musicButton.ForeColor = Color.White;
+            this.Controls.Add(musicButton);
+
         }
 
     }

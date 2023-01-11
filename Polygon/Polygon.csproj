@@ -46,16 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Armor.cs" />
-    <Compile Include="Character.cs" />
-    <Compile Include="Item.cs" />
-    <Compile Include="MainScreenControls.cs">
+    <Compile Include="Entities\Armor.cs" />
+    <Compile Include="Entities\Character.cs" />
+    <Compile Include="Entities\Item.cs" />
+    <Compile Include="UI\MainScreenControls.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GlossaryControls.cs">
+    <Compile Include="UI\GlossaryControls.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainScreenForm.cs">
+    <Compile Include="UI\MainScreenForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MenuMusicPlayer.cs" />
@@ -66,8 +66,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Music.resx</DependentUpon>
     </Compile>
-    <Compile Include="Weapon.cs" />
-    <Compile Include="World.cs" />
+    <Compile Include="Entities\Weapon.cs" />
+    <Compile Include="Entities\World.cs" />
     <EmbeddedResource Include="Properties\Music.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Music.Designer.cs</LastGenOutput>
@@ -113,5 +113,6 @@
   <ItemGroup>
     <None Include="Resources\Music\MenuEpic\MenuSound.wav" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

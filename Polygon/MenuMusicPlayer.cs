@@ -10,11 +10,12 @@ namespace Polygon
 {
     internal static class MenuMusicPlayer
     {
+        private static SoundPlayer backgroundSound;
         public static void Play()
         {
             try
             {
-                SoundPlayer backgroundSound = new SoundPlayer(Properties.Music.MenuSound);
+                backgroundSound = new SoundPlayer(Properties.Music.MenuSound);
                 backgroundSound.PlayLooping();
             }
             catch (FileNotFoundException)
@@ -22,5 +23,14 @@ namespace Polygon
                 Console.WriteLine("Background sound file not found");
             }
         }
+
+        public static void Stop()
+        {
+            if (backgroundSound != null)
+            {
+                backgroundSound.Stop();
+            }
+        }
+        
     }
 }
