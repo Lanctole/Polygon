@@ -1,8 +1,7 @@
 ﻿namespace Polygon
 {
-    public class Armor
+    public class Armor :Item
     {
-        public string Name { get; set; }
         public int Defense { get; set; }
     }
 }

@@ -1,8 +1,7 @@
 ﻿namespace Polygon
 {
-    public class Weapon
+    public class Weapon :Item
     {
-        public string Name { get; set; }
         public int Damage { get; set; }
     }
 }
