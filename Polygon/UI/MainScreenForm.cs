@@ -23,7 +23,7 @@ namespace Polygon
             Size = new Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
             WindowState = FormWindowState.Maximized;
 
-            MenuMusicPlayer.Play();
+            //MenuMusicPlayer.Play();
             MainScreenControlsCreate();
         }
     }
