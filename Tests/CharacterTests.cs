@@ -1,4 +1,5 @@
 using Polygon;
+using Polygon.Entities;
 
 namespace Tests
 {
