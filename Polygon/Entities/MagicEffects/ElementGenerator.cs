@@ -10,9 +10,10 @@ namespace Polygon.Entities.MagicEffects
     {
         public static Element GenerateElement(Elements element)
         {
-            var resultElement = new Element(element);
-            var random = new Random();
-            resultElement.Value= World.Level*World.PowerScaling+random.Next(1, World.PowerScaling*2);
+            var resultElement = new Element(element)
+            {
+                Value = NumeralCharacteristicsGenerator.GenerateElementValue()
+            };
             return resultElement;
         }
     }

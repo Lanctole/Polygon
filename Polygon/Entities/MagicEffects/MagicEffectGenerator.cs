@@ -12,15 +12,15 @@ namespace Polygon.Entities.MagicEffects
         {
             var random = new Random();
             int elementCount=1;
-            if (World.Level<50)
+            if (World.Level<(int)World.WorldDanger.Dangerous)
             {
                 elementCount=random.Next(1, 2);
             }
-            else if(World.Level >= 50 && World.Level<75)
+            else if(World.Level >= (int)World.WorldDanger.Dangerous && World.Level<(int)World.WorldDanger.Fatal)
             {
                 elementCount=random.Next(1, 3);
             }
-            else if(World.Level >= 75)
+            else if(World.Level >=(int)World.WorldDanger.Fatal)
             {
                 elementCount=random.Next(1, 4);
             }
@@ -36,7 +36,7 @@ namespace Polygon.Entities.MagicEffects
                 strength += (int)element;
                 
             }
-            return new MagicEffect(adj + "Blast",  resultElements);
+            return new MagicEffect(adj,  resultElements);
         }
 
         static string GetAdjective(Elements[] elements)
@@ -60,7 +60,7 @@ namespace Polygon.Entities.MagicEffects
                 adjective += elementAdjectives[elements[i]];
                 
             }
-            return adjective;
+            return adjective+" ";
         }
     }
 
