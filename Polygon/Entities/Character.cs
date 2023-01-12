@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Polygon.Entities;
 
-namespace Polygon
+namespace Polygon.Entities
 {
     public class Character
     {
@@ -13,7 +14,7 @@ namespace Polygon
         private int level;
         public int Level
         {
-            get { return level;}
+            get => level;
             set
             {
                 Hp += 100;
@@ -22,10 +23,7 @@ namespace Polygon
         }
         public event EventHandler CharacterLeveledUp;
         
-        public int LevelUpThreshold
-        {
-            get { return 100 * (int)Math.Pow(2, Level); }
-        } 
+        public int LevelUpThreshold => 100 * (int)Math.Pow(2, Level);
 
         public int Gold { get; set; }
 
@@ -39,11 +37,8 @@ namespace Polygon
             this.Experience = 0;
             this.Level = 1;
             this.Gold = 100;
-
-            this.WeaponSlot = new Weapon { Name = "Sword", Damage = 10 };
-            this.ArmorSlot = new Armor { Name = "Leather Armor", Defense = 5 };
-
-            this.Backpack.Add(new Item { Name = "Health Potion", Value = 50 });
+            this.WeaponSlot = new Weapon();
+            this.ArmorSlot = new Armor();
         }
 
         public void IncreaseExperience(int amount)

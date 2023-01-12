@@ -48,7 +48,14 @@
   <ItemGroup>
     <Compile Include="Entities\Armor.cs" />
     <Compile Include="Entities\Character.cs" />
+    <Compile Include="Entities\EquipmentGenerator.cs" />
     <Compile Include="Entities\Item.cs" />
+    <Compile Include="Entities\MagicEffects\Element.cs" />
+    <Compile Include="Entities\MagicEffects\ElementGenerator.cs" />
+    <Compile Include="Entities\MagicEffects\ElementsEnum.cs" />
+    <Compile Include="Entities\MagicEffects\MagicEffect.cs" />
+    <Compile Include="Entities\MagicEffects\MagicEffectGenerator.cs" />
+    <Compile Include="Entities\NumeralCharacteristicsGenerator.cs" />
     <Compile Include="UI\MainScreenControls.cs">
       <SubType>Form</SubType>
     </Compile>
