@@ -9,7 +9,8 @@ namespace Polygon.Entities
 {
     public class Character
     {
-        public int Hp { get; set; }
+        public int CurrentHealth { get; set; }
+        private int MaxHealth { get; set; }
         public int Experience { get; set; }
         private int level;
         public int Level
@@ -17,7 +18,7 @@ namespace Polygon.Entities
             get => level;
             set
             {
-                Hp += 100;
+                MaxHealth += 100;
                 this.level=value;
             }
         }
@@ -36,6 +37,7 @@ namespace Polygon.Entities
             this.Backpack = new List<Item>();
             this.Experience = 0;
             this.Level = 1;
+            this.CurrentHealth = MaxHealth;
             this.Gold = 100;
             this.WeaponSlot = new Weapon();
             this.ArmorSlot = new Armor();

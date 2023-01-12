@@ -27,11 +27,11 @@ namespace Polygon.Entities
         public static int GenerateCost(Item item)
         {
             var random = new Random();
-            int numOfEffects=item.MagicEffect.Elements.Count;
+            
             var cost =(int)((100 + World.Level)*(1-random.Next(-2,3)/10));
-            if (numOfEffects > 0)
+            if (item.MagicEffect !=null)
             {
-                cost*=numOfEffects;
+                cost*=item.MagicEffect.Elements.Count;
             }
             return cost;
         }
