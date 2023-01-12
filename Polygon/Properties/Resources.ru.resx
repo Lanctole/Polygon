@@ -117,13 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Character" xml:space="preserve">
+    <value>Персонаж</value>
+  </data>
   <data name="exit" xml:space="preserve">
     <value>Выйти</value>
   </data>
-  <data name="glossary" xml:space="preserve">
+  <data name="MainScreenControlsCreateExit" xml:space="preserve">
+    <value>Выйти</value>
+  </data>
+  <data name="MainScreenControlsCreateGlossary" xml:space="preserve">
     <value>Справочник</value>
   </data>
-  <data name="playGame" xml:space="preserve">
+  <data name="MainScreenControlsCreatePlayGame" xml:space="preserve">
     <value>Играть</value>
+  </data>
+  <data name="MainScreenControlsCreatePlayMusic" xml:space="preserve">
+    <value>Включить музыку</value>
+  </data>
+  <data name="MainScreenControlsCreateStopMusic" xml:space="preserve">
+    <value>Выключить музыку</value>
+  </data>
+  <data name="StartGameControlsCreateBacktoMainMenu" xml:space="preserve">
+    <value>Вернуться в главное меню</value>
+  </data>
+  <data name="StartGameControlsCreateStartBattle" xml:space="preserve">
+    <value>Битва</value>
   </data>
 </root>
