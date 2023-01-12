@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Polygon.Properties;
 
 namespace Polygon
 {
@@ -17,12 +18,18 @@ namespace Polygon
         {
             var menuButtonsSize = new Size(100, 50);
             bool musicIsPlaying = false;
+
             var playGame = new Button();
-            playGame.Text = resourceManager.GetString("playGame");
+            playGame.Text = Resources.MainScreenControlsCreatePlayGame;
+            playGame.Click += (sender, args) =>
+            {
+                this.Controls.Clear();
+                StartGameControlsCreate();
+            };
             this.Controls.Add(playGame);
 
             var glossary = new Button();
-            glossary.Text = resourceManager.GetString("glossary");
+            glossary.Text = Resources.MainScreenControlsCreateGlossary;
             glossary.Click += (sender, args) =>
             {
                 this.Controls.Clear();
@@ -31,7 +38,7 @@ namespace Polygon
             this.Controls.Add(glossary);
 
             var exit = new Button();
-            exit.Text = resourceManager.GetString("exit");
+            exit.Text = Resources.MainScreenControlsCreateExit;
             exit.Click +=(sender, args) => Application.Exit();
             this.Controls.Add(exit);
 
@@ -42,7 +49,6 @@ namespace Polygon
             buttonsPanel.AutoSize = true;
             buttonsPanel.TabStop = false;
             buttonsPanel.BackColor = Color.Black;
-            buttonsPanel.AutoSize = true;
             buttonsPanel.Location =
                 new Point(Width / 2 - menuButtonsSize.Width, Height / 2 - menuButtonsSize.Height / 2);
 
@@ -60,7 +66,7 @@ namespace Polygon
  
 
             var musicButton = new Button();
-            musicButton.Text = "Play Music";
+            musicButton.Text = Resources.MainScreenControlsCreatePlayMusic;
             musicButton.Size = new Size(50, 50);
             musicButton.Location = new Point(0, this.Height - musicButton.Height);
             musicButton.FlatAppearance.BorderSize = 0;
@@ -68,11 +74,11 @@ namespace Polygon
             musicButton.Click += (sender, args) => {
                 if(musicIsPlaying) {
                     MenuMusicPlayer.Stop();
-                    musicButton.Text = "Play Music";
+                    musicButton.Text = Resources.MainScreenControlsCreatePlayMusic;
                     musicIsPlaying = false;
                 } else {
                     MenuMusicPlayer.Play();
-                    musicButton.Text = "Stop Music";
+                    musicButton.Text = Resources.MainScreenControlsCreateStopMusic;
                     musicIsPlaying = true;
                 }
             };

@@ -11,9 +11,6 @@ namespace Polygon
 {
     public partial class MainForm :Form
     {
-        private readonly ResourceManager resourceManager =
-            new ResourceManager("Polygon.Properties.Resources", typeof(MainForm).Assembly);
-
         public MainForm()
         {
             DoubleBuffered = true;
