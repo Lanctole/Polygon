@@ -8,6 +8,13 @@ namespace Polygon.Entities
 {
     public static class World
     {
+        public enum WorldDanger
+        {
+            Safety=25,
+            Dangerous=50,
+            Fatal=75,
+            Impossible=100
+        }
         public static int Level { get; private set; }
         public static double WeaponToArmorStrengthAttitude { get; private set; }
 
