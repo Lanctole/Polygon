@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Polygon.Entities;
 
-namespace Polygon.Entities
+namespace Polygon.Game.Entities
 {
     public class Character
     {
         public int CurrentHealth { get; set; }
-        private int MaxHealth { get; set; }
+        public int MaxHealth { get; private set; }
         public int Experience { get; set; }
         private int level;
         public int Level
@@ -71,7 +68,6 @@ namespace Polygon.Entities
                         break;
                     }
                 }
-               
             }
         }
 

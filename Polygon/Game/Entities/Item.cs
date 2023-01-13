@@ -1,7 +1,8 @@
 ﻿using System;
+using Polygon.Entities;
 using Polygon.Entities.MagicEffects;
 
-namespace Polygon.Entities
+namespace Polygon.Game.Entities
 {
     public class Item
     {

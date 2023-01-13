@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Polygon.Entities;
 
-namespace Polygon.Entities
+namespace Polygon.Game.Entities
 {
     internal static class NumeralCharacteristicsGenerator
     {
@@ -18,6 +15,7 @@ namespace Polygon.Entities
         {
             return Convert.ToInt32(GenerateDefenseValue()*World.WeaponToArmorStrengthAttitude);
         }
+
         public static int GenerateDefenseValue()
         {
             var random = new Random();
@@ -27,7 +25,6 @@ namespace Polygon.Entities
         public static int GenerateCost(Item item)
         {
             var random = new Random();
-            
             var cost =(int)((100 + World.Level)*(1-random.Next(-2,3)/10));
             if (item.MagicEffect !=null)
             {

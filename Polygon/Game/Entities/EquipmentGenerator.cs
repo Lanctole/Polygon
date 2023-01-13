@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Polygon.Entities;
 using Polygon.Entities.MagicEffects;
 
-namespace Polygon.Entities
+namespace Polygon.Game.Entities
 {
     internal static class EquipmentGenerator
     {
