@@ -1,5 +1,6 @@
 ﻿using Polygon;
 using Polygon.Entities;
+using Polygon.Game.Entities;
 
 namespace Tests
 {
