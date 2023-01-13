@@ -25,7 +25,7 @@ namespace Polygon.Game.Entities
         public static int GenerateCost(Item item)
         {
             var random = new Random();
-            var cost =(int)((100 + World.Level)*(1-random.Next(-2,3)/10));
+            var cost =(int)((100 + World.Level)*(1 - random.Next(-2, 3) / 10.0));
             if (item.MagicEffect !=null)
             {
                 cost*=item.MagicEffect.Elements.Count;
