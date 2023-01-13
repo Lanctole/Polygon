@@ -1,13 +1,7 @@
-﻿using System;
-using System.Drawing;
-using System.IO;
-using System.Media;
-using System.Resources;
-using System.Threading;
+﻿using System.Drawing;
 using System.Windows.Forms;
-using WMPLib;
 
-namespace Polygon
+namespace Polygon.UI
 {
     public partial class MainForm :Form
     {
@@ -16,12 +10,9 @@ namespace Polygon
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             BackColor = Color.Black;
-            //TopMost = true;
             Size = new Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
             WindowState = FormWindowState.Maximized;
-
-            //MenuMusicPlayer.Play();
-            MainScreenControlsCreate();
+            DrawMainScreen();
         }
     }
 }

@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace Polygon
+namespace Polygon.UI
 {
     public partial class MainForm : Form
         {
-            public void GlossaryControlsCreate()
+            public void DrawGlossary()
             {
                 var back = new Button();
                 back.Text = "Назад";
@@ -25,7 +20,7 @@ namespace Polygon
                 back.Click += (sender, args) =>
                 {
                     this.Controls.Clear();
-                    MainScreenControlsCreate();
+                    DrawMainScreen();
                 };
                 Controls.Add(back);
             }

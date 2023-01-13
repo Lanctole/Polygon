@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Polygon.Controls;
+using Polygon.Game;
+using Polygon.Game.Entities;
 using Polygon.Properties;
 
-namespace Polygon
+namespace Polygon.UI
 {
     public partial class MainForm : Form
     {
-        public void StartGameControlsCreate()
+        public void DrawGameScreen(PrimaryControls primaryControl)
         {
             var buttonSize = new Size(100, 50);
             
@@ -27,7 +27,7 @@ namespace Polygon
             backToMainMenu.Click += (sender, args) =>
             {
                 this.Controls.Clear();
-                MainScreenControlsCreate();
+                DrawMainScreen();
             };
             this.Controls.Add(backToMainMenu);
 
@@ -63,11 +63,38 @@ namespace Polygon
             this.Controls.Add(startBattle);
 
             void StartBattle() { /* start battle logic*/ }
-            void ShowCharacter() { /* show character logic */ }
-            void ShowMainMenu() { /* show main menu logic */ }
-            StartGame.StartNewGame();
 
-
+            void ShowCharacter()
+            {
+                var properties = primaryControl.GetCharacterInfo();
+                var labels = new List<Label>();
+                var y = 0;
+                foreach (var property in properties)
+                {
+                    var label = new Label
+                    {
+                        Text = $"{property.Name}: {property.GetValue(primaryControl.character)}",
+                        Location = new Point(0, y),
+                        AutoSize = true
+                    };
+                    label.ForeColor=Color.White;
+                    label.BackColor=Color.Black;
+                    labels.Add(label);
+                    y += label.Height;
+                }
+                var panel = new Panel
+                {
+                    AutoSize = true,
+                    Location = new Point(10, 10)
+                };
+                panel.ForeColor=Color.White;
+                panel.BackColor=Color.Black;
+                foreach (var label in labels)
+                {
+                    panel.Controls.Add(label);
+                }
+                this.Controls.Add(panel);
+            }
         }
     }
 }
