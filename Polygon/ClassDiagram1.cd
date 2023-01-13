@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Polygon.Entities.Armor" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Entities\Armor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Polygon.Entities.Character" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAQAAAAAAAADAAAQAAAAAQAAAEEAAABEABAAAAAQAE=</HashCode>
+      <FileName>Entities\Character.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Polygon.Entities.EquipmentGenerator" Collapsed="true">
+    <Position X="5.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Entities\EquipmentGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Polygon.Entities.Item" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAABQAAAAAQAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Entities\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Polygon.Entities.NumeralCharacteristicsGenerator" Collapsed="true">
+    <Position X="5.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAgAAAAAAAAAAAAABAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Entities\NumeralCharacteristicsGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Polygon.Entities.Weapon" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Weapon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Polygon.Entities.World" Collapsed="true">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Polygon.Entities.World.WorldDanger" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Entities\World.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAACAAAAAAACAAAAAIAAABAAAgAAAgAgA=</HashCode>
+      <FileName>Entities\World.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Polygon.Entities.MagicEffects.Element" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAgAAAAAAA=</HashCode>
+      <FileName>Entities\MagicEffects\Element.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Polygon.Entities.MagicEffects.ElementGenerator" Collapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\MagicEffects\ElementGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Polygon.Entities.MagicEffects.MagicEffect" Collapsed="true">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAQAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\MagicEffects\MagicEffect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Polygon.Entities.MagicEffects.MagicEffectGenerator" Collapsed="true">
+    <Position X="8.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\MagicEffects\MagicEffectGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Polygon.Entities.MagicEffects.Elements" Collapsed="true">
+    <Position X="5.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Entities\MagicEffects\ElementsEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
