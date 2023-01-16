@@ -4,31 +4,30 @@ using Polygon.Entities;
 
 namespace Polygon.Game.Entities
 {
-    public class Character
+    public class Character: ILivingCreature
     {
         public int CurrentHealth { get; set; }
         public int MaxHealth { get; private set; }
         public int Experience { get; set; }
+        public int Gold { get; set; }
         private int level;
         public int Level
         {
             get => level;
             set
             {
-                MaxHealth += 100;
                 this.level=value;
+                CharacterLeveledUp?.Invoke(this,EventArgs.Empty);
             }
         }
-        public event EventHandler CharacterLeveledUp;
-        
         public int LevelUpThreshold => 100 * (int)Math.Pow(2, Level);
-
-        public int Gold { get; set; }
 
         public Weapon WeaponSlot { get; set; }
         public Armor ArmorSlot { get; set; }
         public List<Item> Backpack { get; set; }
 
+        private event EventHandler  CharacterLeveledUp;
+        
         public Character()
         {
             this.Backpack = new List<Item>();
@@ -38,8 +37,13 @@ namespace Polygon.Game.Entities
             this.Gold = 100;
             this.WeaponSlot = new Weapon();
             this.ArmorSlot = new Armor();
+            this.CharacterLeveledUp += OnLevelUp;
         }
-
+        private void OnLevelUp(object sender, EventArgs e)
+        {
+            this.MaxHealth += 100;
+            this.CurrentHealth = this.MaxHealth;
+        }
         public void IncreaseExperience(int amount)
         {
             try
