@@ -17,7 +17,7 @@ namespace Polygon.Game.Entities
         public string Name { get; set; }
         public int Cost { get; private set; }
         public MagicEffect MagicEffect { get; set; }
-        protected Rarities Rarity { get; set; }
+        public Rarities Rarity { get; set; }
 
 
         public Item()
@@ -61,7 +61,7 @@ namespace Polygon.Game.Entities
         protected void SetCost(int cost)
         {
             if (cost <= 0)
-                throw new ArgumentException("Cost should be greater than zero.");
+                throw new ArgumentException("Cost should be greater than zero");
             Cost = cost;
         }
         

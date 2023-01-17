@@ -33,6 +33,7 @@ namespace Polygon.Game.Entities
             this.Backpack = new List<Item>();
             this.Experience = 0;
             this.Level = 1;
+            this.MaxHealth = 100;
             this.CurrentHealth = MaxHealth;
             this.Gold = 100;
             this.WeaponSlot = new Weapon();

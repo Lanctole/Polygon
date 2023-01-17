@@ -43,7 +43,7 @@ namespace Polygon.Entities.MagicEffects
         static string GetAdjective(Elements[] elements)
         {
             if(elements.Length == 0)
-                throw new ArgumentException("elements array should not be empty.");
+                throw new ArgumentException("elements array should not be empty");
         
             var adjective = "";
             
