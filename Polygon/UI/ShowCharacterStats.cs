@@ -12,6 +12,8 @@ namespace Polygon.UI
             var properties = primaryControl.GetCharacterInfo();
             var labels = new List<Label>();
             var y = 0;
+            
+            
             foreach (var property in properties)
             {
                 var label = new Label
@@ -26,35 +28,35 @@ namespace Polygon.UI
                 y += label.Height;
             }
 
-            properties = primaryControl.GetCharacterWeaponInfo();
-            foreach (var property in properties)
-            {
-                var label = new Label
-                {
-                    Text = $"{property.Key}: {property.Value}",
-                    Location = new Point(0, y),
-                    AutoSize = true
-                };
-                label.ForeColor = Color.White;
-                label.BackColor = Color.Black;
-                labels.Add(label);
-                y += label.Height;
-            }
+            //properties = primaryControl.GetCharacterWeaponInfo();
+            //foreach (var property in properties)
+            //{
+            //    var label = new Label
+            //    {
+            //        Text = $"{property.Key}: {property.Value}",
+            //        Location = new Point(0, y),
+            //        AutoSize = true
+            //    };
+            //    label.ForeColor = Color.White;
+            //    label.BackColor = Color.Black;
+            //    labels.Add(label);
+            //    y += label.Height;
+            //}
 
-            properties = primaryControl.GetCharacterArmorInfo();
-            foreach (var property in properties)
-            {
-                var label = new Label
-                {
-                    Text = $"{property.Key}: {property.Value}",
-                    Location = new Point(0, y),
-                    AutoSize = true
-                };
-                label.ForeColor = Color.White;
-                label.BackColor = Color.Black;
-                labels.Add(label);
-                y += label.Height;
-            }
+            //properties = primaryControl.GetCharacterArmorInfo();
+            //foreach (var property in properties)
+            //{
+            //    var label = new Label
+            //    {
+            //        Text = $"{property.Key}: {property.Value}",
+            //        Location = new Point(0, y),
+            //        AutoSize = true
+            //    };
+            //    label.ForeColor = Color.White;
+            //    label.BackColor = Color.Black;
+            //    labels.Add(label);
+            //    y += label.Height;
+            //}
 
             var panel = new Panel
             {
@@ -66,8 +68,6 @@ namespace Polygon.UI
             foreach (var label in labels) panel.Controls.Add(label);
             panel.Visible = false;
             return panel;
-            //Controls.Add(panel);
-            
         }
     }
 }
