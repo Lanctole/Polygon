@@ -61,7 +61,6 @@ namespace Polygon.UI
                     Controls.Clear();
                     var newGame = new GameSessionControl();
                     newGame.NewGame(this);
-                    //DrawGameScreen();
                 };
                 Controls.Add(playGame);
             }
