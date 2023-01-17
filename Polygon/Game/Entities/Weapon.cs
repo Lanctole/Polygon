@@ -22,8 +22,7 @@ namespace Polygon.Game.Entities
         public Weapon() : base()
         {
             Damage = NumeralCharacteristicsGenerator.GenerateDamageValue();
-            var random = new Random();
-            Name += WeaponTypes[random.Next(0, WeaponTypes.Length)];
+            Name += WeaponTypes[World.WorldRandom.Next(0, WeaponTypes.Length)];
         }
     }
 }

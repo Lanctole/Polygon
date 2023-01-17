@@ -1,4 +1,6 @@
-﻿namespace Polygon.Game.Entities
+﻿using System;
+
+namespace Polygon.Game.Entities
 {
     public static class World
     {
@@ -9,11 +11,12 @@
             Fatal=75,
             Impossible=100
         }
+
         public static int Level { get; private set; }
         public static double WeaponToArmorStrengthAttitude { get; private set; }
-
         public static int PowerScaling { get; private set; }
         public static int EnemiesRange { get; private set; }
+        public static Random WorldRandom = new Random();
 
         static World()
         {

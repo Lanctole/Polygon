@@ -27,8 +27,8 @@ namespace Polygon.Game.Entities
         public Armor():base()
         {
             Defense = NumeralCharacteristicsGenerator.GenerateDefenseValue();
-            var random = new Random();
-            Name += ArmorTypes[random.Next(0, ArmorTypes.Length)];
+            Name += ArmorTypes[World.WorldRandom.Next(0, ArmorTypes.Length)];
+            
         }
     }
 }
