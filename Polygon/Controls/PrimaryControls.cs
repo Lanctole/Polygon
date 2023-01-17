@@ -11,11 +11,12 @@ namespace Polygon.Controls
 {
     public  class PrimaryControls
     {
-        public readonly Character Character;
-
+        private readonly Character Character;
+        private readonly Inventory Inventory;
         public PrimaryControls(Character character)
         {
             this.Character = character;
+            this.Inventory = new Inventory(character);
         }
 
         public Dictionary<string,string> GetCharacterInfo()
@@ -39,6 +40,21 @@ namespace Polygon.Controls
         public Dictionary<string,string> GetCharacterArmorInfo()
         {
             return  PropertiesGiver.ReturnWeaponProperties(Character.WeaponSlot);
+        }
+
+        public Weapon GetCharacterWeapon()
+        {
+            return Character.WeaponSlot;
+        }
+
+        public Armor GetCharacterArmor()
+        {
+            return Character.ArmorSlot;
+        }
+
+        public Inventory GetInventory()
+        {
+            return Inventory;
         }
     }
 }

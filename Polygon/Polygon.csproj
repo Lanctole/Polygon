@@ -60,8 +60,20 @@
     <Compile Include="Game\Entities\MagicEffects\MagicEffect.cs" />
     <Compile Include="Game\Entities\MagicEffects\MagicEffectGenerator.cs" />
     <Compile Include="Game\Entities\NumeralCharacteristicsGenerator.cs" />
+    <Compile Include="Game\Inventory.cs" />
     <Compile Include="Game\PropertiesGiver.cs" />
     <Compile Include="Game\Start.cs" />
+    <Compile Include="Properties\ImagesItems.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImagesItems.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ShowEquipped.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ShowInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI\MainScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +99,10 @@
     <Compile Include="UI\ShowCharacterStats.cs">
       <SubType>Form</SubType>
     </Compile>
+    <EmbeddedResource Include="Properties\ImagesItems.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ImagesItems.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Music.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Music.Designer.cs</LastGenOutput>
@@ -133,6 +149,14 @@
   <ItemGroup>
     <None Include="Resources\Music\MenuEpic\MenuSound.wav" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Baal_cry.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image2.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

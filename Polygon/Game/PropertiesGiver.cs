@@ -12,9 +12,13 @@ namespace Polygon.Game
     {
         public static Dictionary<string, string> ReturnCharacterProperties(Character character)
         {
-            Dictionary<string,string> charProps = new Dictionary<string,string>();
-            charProps.Add("Experience", character.Experience.ToString());
-            charProps.Add("Gold", character.Gold.ToString());
+            Dictionary<string, string> charProps = new Dictionary<string, string>
+            {
+                { "Gold", character.Gold.ToString() },
+                { "Experience", character.Experience.ToString()+"/"+ character.LevelUpThreshold.ToString()}
+                //{ "Experience Threshold", character.LevelUpThreshold.ToString() },
+                
+            };
             charProps =charProps.Concat(ReturnLivingCreatureProperties(character))
                 .ToDictionary(x=>x.Key, x=>x.Value);
             return charProps;
@@ -25,8 +29,8 @@ namespace Polygon.Game
             Dictionary<string, string> livingCreatureProps = new Dictionary<string, string>
             {
                 { "Level", creature.Level.ToString() },
-                { "Current Health", creature.CurrentHealth.ToString() },
-                { "Max Health", creature.MaxHealth.ToString() }
+                { "Current Health", creature.CurrentHealth.ToString()+"/"+creature.MaxHealth.ToString() },
+                //{ "Max Health", creature.MaxHealth.ToString() }
             };
             return livingCreatureProps;
         }
