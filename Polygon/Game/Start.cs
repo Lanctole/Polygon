@@ -6,7 +6,8 @@ namespace Polygon.Game
     {
         public static Character StartNewGame()
         {
-            return new Character();
+            World.SetLevel(1);
+            return new Character(10000000);
         }
     }
 }
