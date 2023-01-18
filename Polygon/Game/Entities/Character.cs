@@ -8,7 +8,7 @@ namespace Polygon.Game.Entities
     {
         public int CurrentHealth { get; set; }
         public int MaxHealth { get; private set; }
-        public int Experience { get; set; }
+        public long Experience { get; set; }
         public int Gold { get; set; }
         private int level;
         public int Level
@@ -20,7 +20,7 @@ namespace Polygon.Game.Entities
                 CharacterLeveledUp?.Invoke(this,EventArgs.Empty);
             }
         }
-        public int LevelUpThreshold => 100 * (int)Math.Pow(2, Level);
+        public long LevelUpThreshold => 10000*Level +  (Level%10*1000);
 
         public Weapon WeaponSlot { get; set; }
         public Armor ArmorSlot { get; set; }
@@ -30,6 +30,14 @@ namespace Polygon.Game.Entities
         
         public Character()
         {
+            this.Level = 1;
+            this.Experience = 0;
+            this.MaxHealth = 100*Level;
+            this.CurrentHealth = MaxHealth;
+            this.Gold = 100;
+            this.WeaponSlot = new Weapon();
+            this.ArmorSlot = new Armor();
+            this.CharacterLeveledUp += OnLevelUp;
             this.Backpack = new List<Item>();
             this.Backpack.Capacity = 90;
             for (int i = 0; i < 2; i++)
@@ -37,14 +45,16 @@ namespace Polygon.Game.Entities
                 this.Backpack.Add(new Armor());
                 this.Backpack.Add(new Weapon());
             }
-            this.Experience = 0;
-            this.Level = 1;
-            this.MaxHealth = 100;
-            this.CurrentHealth = MaxHealth;
-            this.Gold = 100;
-            this.WeaponSlot = new Weapon();
-            this.ArmorSlot = new Armor();
-            this.CharacterLeveledUp += OnLevelUp;
+        }
+
+        public Character(long experience):this()
+        {
+            IncreaseExperience(experience);
+            for (int i = 0; i < 2; i++)
+            {
+                this.Backpack.Add(new Armor());
+                this.Backpack.Add(new Weapon());
+            }
         }
 
         private void OnLevelUp(object sender, EventArgs e)
@@ -53,7 +63,7 @@ namespace Polygon.Game.Entities
             this.CurrentHealth = this.MaxHealth;
         }
 
-        public void IncreaseExperience(int amount)
+        public void IncreaseExperience(long amount)
         {
             try
             {
@@ -84,7 +94,7 @@ namespace Polygon.Game.Entities
             }
         }
 
-        public void DecreaseExperience(int amount)
+        public void DecreaseExperience(long amount)
         {
             try
             {
