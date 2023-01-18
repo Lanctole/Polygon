@@ -44,5 +44,9 @@ namespace Polygon.Game.Entities
         {
             World.Level += amount;
         }
+        public static void SetLevel(int amount)
+        {
+            World.Level = amount;
+        }
     }
 }

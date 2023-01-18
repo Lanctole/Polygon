@@ -7,8 +7,13 @@ namespace Polygon.Game.Entities
     {
         public static void ItemGenerator(Item item)
         {
-            item.MagicEffect = MagicEffectGenerator.GenerateMagicEffect();
-            item.Name=item.MagicEffect.Name;
+            var generationDecision=World.WorldRandom.Next(0, 4);
+            if (generationDecision == 1)
+            {
+                item.MagicEffect = MagicEffectGenerator.GenerateMagicEffect();
+                item.Name=item.MagicEffect.Name;
+            }
+               
         }
     }
 }

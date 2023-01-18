@@ -16,8 +16,6 @@ namespace Polygon.Game
             {
                 { "Gold", character.Gold.ToString() },
                 { "Experience", character.Experience.ToString()+"/"+ character.LevelUpThreshold.ToString()}
-                //{ "Experience Threshold", character.LevelUpThreshold.ToString() },
-                
             };
             charProps =charProps.Concat(ReturnLivingCreatureProperties(character))
                 .ToDictionary(x=>x.Key, x=>x.Value);
@@ -30,7 +28,6 @@ namespace Polygon.Game
             {
                 { "Level", creature.Level.ToString() },
                 { "Current Health", creature.CurrentHealth.ToString()+"/"+creature.MaxHealth.ToString() },
-                //{ "Max Health", creature.MaxHealth.ToString() }
             };
             return livingCreatureProps;
         }
@@ -49,7 +46,6 @@ namespace Polygon.Game
                 weaponProps =weaponProps.Concat(ReturnMagicEffectProperties(weapon.MagicEffect))
                     .ToDictionary(x=>x.Key, x=>x.Value);
             }
-            
             return weaponProps;
         }
 
@@ -67,7 +63,6 @@ namespace Polygon.Game
                 armorProps =armorProps.Concat(ReturnMagicEffectProperties(armor.MagicEffect))
                     .ToDictionary(x=>x.Key, x=>x.Value);
             }
-           
             return armorProps;
         }
 
