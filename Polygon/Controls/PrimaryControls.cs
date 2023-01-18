@@ -52,6 +52,17 @@ namespace Polygon.Controls
             return Character.ArmorSlot;
         }
 
+        public void SetItemInCharacterSlot(Item item)
+        {
+            if (item.GetType() == typeof(Weapon))
+            {
+                Character.WeaponSlot = (Weapon)item;
+            }
+            else if(item.GetType() == typeof(Armor))
+            {
+                Character.ArmorSlot = (Armor)item;
+            }
+        }
         public Inventory GetInventory()
         {
             return Inventory;

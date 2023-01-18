@@ -13,7 +13,7 @@ namespace Polygon.UI
 {
     public partial class MainForm : Form
     {
-        public FlowLayoutPanel ShowInventory(PrimaryControls primaryControl)// переписать чтобы форма не видела инвентарь
+        public FlowLayoutPanel ShowInventory(PrimaryControls primaryControl)
             {
                 var itemCells = new List<Button>();
                 var itemCellContainer = new FlowLayoutPanel();
@@ -30,7 +30,7 @@ namespace Polygon.UI
                     itemCell.FlatStyle = FlatStyle.Flat;
                     itemCell.BackgroundImage = Properties.ImagesItems.Image2;
                     var i1 = i;
-                    itemCell.Click += (sender, args) => ShowItemProperties(primaryControl.GetInventory().Items[i1]);
+                    itemCell.Click += (sender, args) => ShowItemProperties(primaryControl.GetInventory().Items[i1],primaryControl);
                     itemCells.Add(itemCell);
                     itemCellContainer.Controls.Add(itemCell);
                 }
@@ -41,7 +41,7 @@ namespace Polygon.UI
 
         
 
-        private void ShowItemProperties(Item item)
+        private void ShowItemProperties(Item item,PrimaryControls primaryControl)// переписать: убрать форму, получать данные через контрол, размеры окошка
             {
                 if (item == null)
                 {
@@ -50,7 +50,11 @@ namespace Polygon.UI
                 var itemPropertiesForm = new Form();
                 itemPropertiesForm.Text = item.Name;
                 itemPropertiesForm.Size = new Size(300, 300);
-                itemPropertiesForm.StartPosition = FormStartPosition.CenterScreen;
+                itemPropertiesForm.StartPosition = FormStartPosition.Manual;
+                itemPropertiesForm.Location = Cursor.Position;
+                itemPropertiesForm.FormBorderStyle= FormBorderStyle.None;
+                itemPropertiesForm.BackColor=Color.SeaGreen;
+               
 
                 var itemPropertiesList = new ListBox();
                 itemPropertiesList.Dock = DockStyle.Fill;
@@ -68,14 +72,26 @@ namespace Polygon.UI
                     Armor armor = (Armor)item;
                     itemPropertiesList.Items.Add("Defense: " + armor.Defense);
                 }
+
+                if (item.MagicEffect != null)
+                {
+                    itemPropertiesList.Items.Add("Magic Effect Name: " + item.MagicEffect.Name);
+                    itemPropertiesList.Items.Add("Magic Effect Strength: " + item.MagicEffect.Strength);
+                    //itemPropertiesList.Items.Add("Magic Effect Elements:" + item.MagicEffect.Elements.ToArray());
+                }
                 itemPropertiesForm.Controls.Add(itemPropertiesList);
 
                 var equipButton = new Button();
                 equipButton.Text = "Equip";
                 equipButton.Dock = DockStyle.Bottom;
-                //equipButton.Click += (sender, args) => character.Equip(item);
+                equipButton.Click += (sender, args) =>
+                {
+                    primaryControl.SetItemInCharacterSlot(item);
+                    itemPropertiesForm.Close();
+                };
                 itemPropertiesForm.Controls.Add(equipButton);
-
+                itemPropertiesForm.AutoSize=true;
+                itemPropertiesForm.AutoSizeMode=AutoSizeMode.GrowOnly;
                 itemPropertiesForm.ShowDialog();
             }
     }

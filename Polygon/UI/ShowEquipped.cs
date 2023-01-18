@@ -22,7 +22,7 @@ namespace Polygon.UI
                 itemCellWeapon.FlatAppearance.BorderSize = 0;
                 itemCellWeapon.FlatStyle = FlatStyle.Flat;
                 itemCellWeapon.BackgroundImage = ImagesItems.Image1;
-                itemCellWeapon.Click += (sender, args) => ShowItemProperties(primaryControl.GetCharacterWeapon());
+                itemCellWeapon.Click += (sender, args) => ShowItemProperties(primaryControl.GetCharacterWeapon(),primaryControl);
                 
                 var itemCellArmor = new Button();
                 itemCellArmor.Size = new Size(50, 50);
@@ -32,7 +32,7 @@ namespace Polygon.UI
                 itemCellArmor.FlatAppearance.BorderSize = 0;
                 itemCellArmor.FlatStyle = FlatStyle.Flat;
                 itemCellArmor.BackgroundImage = ImagesItems.Image2;
-                itemCellArmor.Click += (sender, args) => ShowItemProperties(primaryControl.GetCharacterArmor());
+                itemCellArmor.Click += (sender, args) => ShowItemProperties(primaryControl.GetCharacterArmor(), primaryControl);
 
                 itemCellContainer.Controls.Add(itemCellWeapon);
                 itemCellContainer.Controls.Add(itemCellArmor);
